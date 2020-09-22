@@ -251,6 +251,7 @@ func main() {
 			rlines = qlines
 		}
 		out.Write([]byte("\x1b[?25l"))
+		out.Write([]byte("\x1b[m"))
 		for i, line := range qlines {
 			line = strings.Replace(line, "\t", "    ", -1)
 			line = truncate(line, w, "")
